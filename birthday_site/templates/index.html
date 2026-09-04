@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"  
+content="width=device-width, 
+initial-scale=1.0">
+
+    <title>С днём рождения! 🎂</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-text">
+                небольшой подарок для тебя ✨
+            </p>
+
+
+            <h1>
+                С днём рождения, Вика! 🎂
+            </h1>
+
+
+            <p class="description">
+                Я решил сделать тебе небольшой подарок
+                и почему-то решил, что обычный подарок —
+                это слишком просто 😌
+            </p>
+
+
+            <a href="#about" class="button">
+                Открыть подарок ↓
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ПОЧЕМУ ТЫ КЛАССНАЯ -->
+
+    <section id="about" class="about">
+
+        <h2>
+            Почему ты классная? ✨
+        </h2>
+
+
+        <p>
+
+            Тут можно было бы написать огромный список,
+            но я решил оставить только три пункта 😌
+
+        </p>
+
+
+        <div class="cards">
+
+
+            <!-- КАРТОЧКА 1 -->
+
+            <div class="card">
+
+                <span>
+                    😂
+                </span>
+
+                <h3>
+                    С тобой весело
+                </h3>
+
+                <p>
+                    Даже обычный разговор с тобой
+                    легко превращается в какой-нибудь прикол.
+                </p>
+
+            </div>
+
+
+
+            <!-- КАРТОЧКА 2 -->
+
+            <div class="card">
+
+                <span>
+                    💬
+                </span>
+
+                <h3>
+                    С тобой интересно
+                </h3>
+
+                <p>
+                    Можно говорить обо всём —
+                    от серьёзных вещей до полной ерунды.
+                </p>
+
+            </div>
+
+
+
+            <!-- КАРТОЧКА 3 -->
+
+            <div class="card">
+
+                <span>
+                    ✨
+                </span>
+
+                <h3>
+                    Ты просто классная
+                </h3>
+
+                <p>
+                    Тут даже объяснять особо нечего.
+                    Думаю, ты и сама это знаешь 😌
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ФИНАЛЬНОЕ ПОЗДРАВЛЕНИЕ -->
+
+    <section class="final">
+
+        <h2>
+            С днём рождения! 🎉
+        </h2>
+
+
+        <p>
+            Желаю тебе побольше счастливых моментов,
+            хороших людей рядом и чтобы всё,
+            что ты задумала, получилось.
+        </p>
+
+
+        <div class="heart">
+            ❤️
+        </div>
+
+    </section>
+<!-- ВЫБОР ВСТРЕЧИ -->
+
+<section class="meeting" id="meeting">
+
+    <h2>Я хотел бы еще раз увидится, выбери время и дату 😊</h2>
+
+    <p>
+        Выбирай удобную дату и время ❤️
+    </p>
+<form action="/save-meeting" method="POST">
+
+    <label for="date">📅 Дата встречи</label>
+    <input
+        type="date"
+        id="date"
+        name="date"
+        value="{{ meeting.date }}"
+        required
+    >
+
+
+    <label for="time">🕒 Время встречи</label>
+    <input
+        type="time"
+        id="time"
+        name="time"
+        value="{{ meeting.time }}"
+        required
+    >
+
+
+    <button type="submit">
+        Подтвердить встречу ❤️
+    </button>
+
+</form>
+
+
+{% if meeting.date and meeting.time %}
+
+    <div class="meeting-result">
+
+        <h3>Выбор сохранён ❤️</h3>
+
+        <p>Дата: {{ meeting.date }}</p>
+
+        <p>Время: {{ meeting.time }}</p>
+
+    </div>
+
+{% endif %}
+
+</section>
+
+<script src="/static/script.js"></script>
+
+</body>
+ 
+</html>

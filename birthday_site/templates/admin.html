@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Выбор встречи</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <main class="admin-page">
+
+        <h1>Выбор встречи</h1>
+
+        {% if meeting.date and meeting.time %}
+
+            <div class="meeting-result">
+
+                <h2>Вика выбрала:</h2>
+
+                <p>📅 Дата: {{ meeting.date }}</p>
+
+                <p>🕒 Время: {{ meeting.time }}</p>
+
+            </div>
+
+        {% else %}
+
+            <div class="meeting-result">
+
+                <h2>Пока выбора нет</h2>
+
+                <p>Вика ещё не выбрала дату и время.</p>
+
+            </div>
+
+        {% endif %}
+
+        <a href="/" class="button">
+            Вернуться на сайт
+        </a>
+
+    </main>
+
+</body>
+
+</html>

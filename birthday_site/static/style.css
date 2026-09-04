@@ -1,0 +1,573 @@
+/* =========================
+   ОСНОВНЫЕ НАСТРОЙКИ
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    color: #333;
+
+    background: #fff7fa;
+}
+
+
+
+/* =========================
+   ГЛАВНЫЙ ЭКРАН
+========================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #ffd6e7,
+        #fff0f6
+    );
+
+}
+
+
+.hero-content {
+
+    max-width: 700px;
+
+    animation: appear 1.2s ease;
+
+}
+
+
+.small-text {
+
+    font-size: 16px;
+
+    color: #b85c7c;
+
+    margin-bottom: 20px;
+
+}
+
+
+h1 {
+
+    font-size: 60px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.description {
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+    margin-bottom: 35px;
+
+}
+
+
+
+/* =========================
+   КНОПКА
+========================= */
+
+.button {
+
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    background: #d85b83;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    transition: 0.3s;
+
+}
+
+
+.button:hover {
+
+    transform: translateY(-4px);
+
+}
+
+
+
+/* =========================
+   ОБЩИЕ НАСТРОЙКИ СЕКЦИЙ
+========================= */
+
+section {
+
+    padding: 100px 20px;
+
+}
+
+
+h2 {
+
+    text-align: center;
+
+    font-size: 40px;
+
+    margin-bottom: 50px;
+
+}
+
+
+
+/* =========================
+   БЛОК "ПОЧЕМУ ТЫ КЛАССНАЯ"
+========================= */
+
+.about {
+
+    text-align: center;
+
+}
+
+
+.about > p {
+
+    max-width: 650px;
+
+    margin: 0 auto 50px;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+}
+
+
+
+/* =========================
+   КАРТОЧКИ
+========================= */
+
+.cards {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: flex;
+
+    gap: 25px;
+
+    justify-content: center;
+
+}
+
+
+.card {
+
+    background: white;
+
+    padding: 35px 25px;
+
+    border-radius: 20px;
+
+    width: 30%;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+
+}
+
+
+.card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+.card span {
+
+    font-size: 40px;
+
+}
+
+
+.card h3 {
+
+    margin: 15px 0;
+
+}
+
+
+.card p {
+
+    line-height: 1.5;
+
+}
+
+
+
+/* =========================
+   ФИНАЛЬНЫЙ БЛОК
+========================= */
+
+.final {
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #ffe0ec,
+        #fff4f8
+    );
+
+}
+
+
+.final p {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    font-size: 19px;
+
+    line-height: 1.6;
+
+}
+
+
+.heart {
+
+    font-size: 60px;
+
+    margin-top: 30px;
+
+    animation: heartbeat 1.2s infinite;
+
+}
+
+
+
+/* =========================
+   АНИМАЦИИ
+========================= */
+
+@keyframes appear {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(30px);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+@keyframes heartbeat {
+
+    0% {
+
+        transform: scale(1);
+
+    }
+
+
+    50% {
+
+        transform: scale(1.2);
+
+    }
+
+
+    100% {
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+
+/* =========================
+   ТЕЛЕФОН
+========================= */
+
+@media (max-width: 700px) {
+
+
+    h1 {
+
+        font-size: 40px;
+
+    }
+
+
+    h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    .description {
+
+        font-size: 17px;
+
+    }
+
+
+    .cards {
+
+        flex-direction: column;
+
+    }
+
+
+    .card {
+
+        width: 100%;
+
+    }
+
+}
+/* =========================
+   АНИМАЦИЯ КАРТОЧЕК
+========================= */
+
+.card {
+
+    opacity: 0;
+
+    transform: translateY(40px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+
+}
+
+
+.card.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+
+/* =========================
+   КОНФЕТТИ
+========================= */
+
+.confetti {
+
+    position: fixed;
+
+    top: -50px;
+
+    font-size: 25px;
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    animation: fall linear forwards;
+
+}
+
+
+@keyframes fall {
+
+    from {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+
+    }
+
+
+    to {
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+
+/* =========================
+   СЕРДЦЕ
+========================= */
+
+.heart {
+
+    cursor: pointer;
+
+    user-select: none;
+
+}
+/* Адаптация под телефон */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+/* ВЫБОР ВСТРЕЧИ */
+
+.meeting {
+    padding: 80px 20px;
+    text-align: center;
+    background: #fff5f8;
+}
+
+.meeting h2 {
+    margin-bottom: 15px;
+}
+
+.meeting p {
+    margin-bottom: 30px;
+}
+
+#meeting-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+#meeting-form label {
+    font-weight: 600;
+}
+
+#meeting-form input {
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    background: white;
+}
+
+#meeting-form button {
+    margin-top: 15px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #ff6b9a;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#meeting-form button:hover {
+    background: #ff4f87;
+}
+
+.meeting-result {
+    max-width: 500px;
+    margin: 30px auto 0;
+    padding: 20px;
+    border-radius: 15px;
+    background: white;
+}
+/* СТРАНИЦА ПРОСМОТРА ВЫБОРА */
+
+.admin-page {
+    min-height: 100vh;
+    padding: 80px 20px;
+    text-align: center;
+    background: #fff5f8;
+}
+
+.admin-page h1 {
+    margin-bottom: 30px;
+}
+
+.admin-page .meeting-result {
+    max-width: 500px;
+    margin: 0 auto 30px;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.admin-page .meeting-result h2 {
+    margin-bottom: 20px;
+}
+
+.admin-page .meeting-result p {
+    margin: 10px 0;
+}
